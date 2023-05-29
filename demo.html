@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>匯率轉換計算機</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<style>
+		/* Additional inline CSS styles */
+		.result-table {
+			margin-top: 20px;
+			border-collapse: collapse;
+		}
+
+		.result-table th, .result-table td {
+			padding: 8px;
+			border: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1 class="fade-in">匯率轉換計算機</h1>
+		<h4 class="slide-in">點擊calculate輸入金額，讓計算機為您計算當前對應五種貨幣能換取多少現金吧!!!</h4>
+		<button class="pulse" onclick="question()">calculate</button>
+		<p id="result"></p>
+	</div>
+	<script>
+		var amount_twd = 0;
+		var rates = {
+			USD: 0.03304,
+			EUR: 0.03115,
+			JPY: 4.78468,
+			KRW: 46.59832,
+			AUD: 0.05086
+		};
+
+		function question() {
+			var msg;
+			amount_twd = prompt('輸入台幣金額:');
+			if (amount_twd == null || amount_twd == ""){
+				msg = "非有效數值，請重新輸入，謝謝。";
+			} else {
+				msg = '計算結果:' + calculate(amount_twd);
+			}
+			document.getElementById("result").innerHTML = msg;
+			}
+
+		function calculate(amount) {
+			var table = "<table class='result-table'><tr><th>USD</th><th>EUR</th><th>JPY</th><th>KRW</th><th>AUD</th></tr>";
+			table += "<tr><td>" +
+				(rates.USD * amount).toFixed(2) + "</td><td>" +
+				(rates.EUR * amount).toFixed(2) + "</td><td>" +
+				(rates.JPY * amount).toFixed(2) + "</td><td>" +
+				(rates.KRW * amount).toFixed(2) + "</td><td>" +
+				(rates.AUD * amount).toFixed(2) + "</td></tr>";
+			table += "</table>";
+			return table;
+		}
+	</script>
+</body>
+</html>
