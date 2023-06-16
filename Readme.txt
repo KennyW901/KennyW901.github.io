@@ -1,6 +1,1 @@
-Thanks for downloading this template!
-
-Template Name: Restaurantly
-Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+抱歉老師和助教，我不知道為甚麼git上來之後網站打開後會跑掉，我本地直接開是沒問題的，找了好就也不知道哪裡出錯，非常抱歉
